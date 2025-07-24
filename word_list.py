@@ -1,6 +1,6 @@
 
 #String that includes all words separated by a space.
-words = "test1 test2 test3 test4"
+words = "peach house party album fruit carol march"
 
 #`dictionary` stores all words in a list.
 dictionary = words.split()
