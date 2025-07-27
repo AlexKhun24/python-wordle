@@ -27,12 +27,12 @@ def main():
         for i in range(5):
             if user_guess[i] == word_choice[i]:
                 square_output[i] = "✅"
-                letters_and_count.update({word_choice[i]: letters_and_count.get(word_choice[i]) - 1})
+                letters_and_count[user_guess[i]] -= 1
 
         for i in range(5):
             if user_guess[i] != word_choice[i] and user_guess[i] in letters_and_count and letters_and_count.get(user_guess[i]) != 0:
                 square_output[i] = "🟨"
-                letters_and_count.update({word_choice[i]: letters_and_count.get(word_choice[i]) - 1})
+                letters_and_count[user_guess[i]] -= 1
 
         print("".join(square_output))
 
@@ -48,7 +48,7 @@ def main():
             print("✅✅✅✅✅")
             exit(0)
 
-    print("\nYou lose.")
+    print(f"\nYou lose. The word was {word_choice}.")
 
 if __name__ == "__main__":
     main()

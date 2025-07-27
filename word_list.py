@@ -1,9 +1,13 @@
 
 #String that includes all words separated by a space.
-words = "peach house party album fruit carol march"
+file_path = "words.txt"
+try:
+    with open(file_path, "r") as file:
+        dictionary = file.read().splitlines()
+except FileNotFoundError:
+    dictionary = ["test1", "test2", "test3", "test4", "test5"]
 
 #`dictionary` stores all words in a list.
-dictionary = words.split()
 
 #main function to test if `dictionary` is formatted correctly
 def main():
